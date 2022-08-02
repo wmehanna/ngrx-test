@@ -20,9 +20,6 @@ export class AppComponent  implements OnInit {
     this.chartLoaded$.subscribe({
       next: (ipState) => {
         console.log(ipState);
-        // if (gaugeChartState?.status === HttpStatusEnum.success) {
-        // 	this.setGaugeChartData(gaugeChartState.gaugeChart);
-        // }
       }
     })
   }
