@@ -6,7 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { IpStateEffects } from './state/ip-state/ip-state.effects';
-import { ipStateReducer } from './state/ip-state/ip-state.reducer';
+import { IP_KEY, ipStateReducer } from './state/ip-state/ip-state.reducer';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     StoreModule.forRoot(
       {
-        ipStateReducer
+        [IP_KEY]: ipStateReducer
       },
       {
         runtimeChecks: {
@@ -29,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
       }
     ),
     StoreDevtoolsModule.instrument({
-      name: 'Defender Mobile',
+      name: 'Ngrx-test',
       maxAge: 25,
     }),
     EffectsModule.forRoot([
